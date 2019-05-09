@@ -1,5 +1,8 @@
 const {app, BrowserWindow} = require('electron');
 
+const ipcTest = require('./layout/demo/1_ipc_main');
+ipcTest.ipcMain1()
+
 app.on('ready', () => {
 
     const win = new BrowserWindow({
@@ -14,3 +17,5 @@ app.on('ready', () => {
     win.loadFile('./layout/index.html');
 
 });
+
+

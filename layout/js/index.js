@@ -1,8 +1,21 @@
 const {remote} = require('electron');
+const path = require('path')
+
+// __dirname指向layout
+const resolve = curpath => path.resolve(__dirname, curpath)
+
+
+const demo1 = require(resolve("./demo/1_ipc"))
+
 
 let _id = 0;
 
 new Vue({
+    mounted() {
+        this.$nextTick(()=> {
+            demo1.ipcRender();
+        })
+    },
     el: '#root',
     data: {
         title: 'TODOS',
